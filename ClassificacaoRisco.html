@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- begin::Head -->
+<head>
+<meta charset="utf-8"/>
+<title>Classificação de Risco | Klinikos</title>
+<meta name="description" content="Latest updates and statistic charts">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--begin::Fonts -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+        google: {
+            "families":[
+                "Poppins:300,400,500,600,700"]},
+            active: function() {
+                sessionStorage.fonts = true;
+        }
+    });
+</script>
+<!--end::Fonts -->
+
+<!--begin:: External jQuery and Custom Interface.css, InputMask.js, Interface.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/\jquery/3.3.1/jquery.min.js"></script>
+<link href="assets/app/custom/general/interface.css" rel="stylesheet" type="text/css"/>
+<script src="assets/app/custom/general/jquery.maskedinput.min.js"></script>
+<script src="assets/app/custom/general/interface.js" type="text/javascript"></script>
+
+<!--end:: External jQuery and Custom Interface.css, InputMask.js, Interface.js -->
+
+<!--begin::Page Vendors Styles(used by this page) -->
+<link href="assets/vendors/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+<!--end::Page Vendors Styles -->
+<!--begin:: Global Mandatory Vendors -->
+<link href="assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+<!--end:: Global Mandatory Vendors -->
+
+<!--begin:: Global Optional Vendors -->
+<link href="assets/vendors/general/tether/dist/css/tether.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/bootstrap-datetime-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/nouislider/distribute/nouislider.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/summernote/dist/summernote.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/animate.css/animate.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/toastr/build/toastr.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/morris.js/morris.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/sweetalert2/dist/sweetalert2.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/general/socicon/css/socicon.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/custom/vendors/line-awesome/css/line-awesome.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
+<link href="assets/vendors/custom/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
+<!--end:: Global Optional Vendors -->
+
+<!--begin::Global Theme Styles(used by all pages) -->
+
+<link href="assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+<!--end::Global Theme Styles -->
+<!--begin::Layout Skins(used by all pages) -->
+<link href="assets/demo/default/skins/header/base/light.css" rel="stylesheet" type="text/css" />
+<link href="assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
+<link href="assets/demo/default/skins/brand/navy.css" rel="stylesheet" type="text/css" />
+<link href="assets/demo/default/skins/aside/navy.css" rel="stylesheet" type="text/css" />
+<!--end::Layout Skins -->
+<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+</head>
+    <!-- end::Head -->
+    <!-- begin::Body -->
+    <body class="k-header--fixed k-header-mobile--fixed k-subheader--enabled k-subheader--transparent k-aside--enabled k-aside--fixed k-page--loading" >
+        <!-- begin:: Header Mobile -->
+        <div id="k_header_mobile" class="k-header-mobile k-header-mobile--fixed " >
+            <div class="k-header-mobile__logo">
+                <a href="default/index.html">
+                    <img alt="Logo" src="assets/media/logos/logo-6.png"/>
+                </a>
+            </div>
+            <div class="k-header-mobile__toolbar">
+                <button class="k-header-mobile__toolbar-toggler k-header-mobile__toolbar-toggler--left" id="k_aside_mobile_toggler"><span></span></button>
+                <button class="k-header-mobile__toolbar-toggler" id="k_header_mobile_toggler"><span></span></button>
+                <button class="k-header-mobile__toolbar-topbar-toggler" id="k_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
+            </div>
+        </div>
+        <!-- end:: Header Mobile -->
+        
+        <!-- begin:: Root -->
+        <div class="k-grid k-grid--hor k-grid--root">
+            <!-- begin:: Page -->
+            <div class="k-grid__item k-grid__item--fluid k-grid k-grid--ver k-page">
+                <!-- begin:: Aside -->
+                <button class="k-aside-close " id="k_aside_close_btn"><i class="la la-close"></i></button>
+                <div class="k-aside k-aside--fixed k-grid__item k-grid k-grid--desktop k-grid--hor-desktop" id="k_aside">
+                    <!-- begin::Aside Brand -->
+                    <div class="k-aside__brand k-grid__item " id="k_aside_brand">
+                        <div class="k-aside__brand-logo">
+                            <a href="javascript:void(0);">
+                                <img alt="Logo" src="assets/media/logos/logo-klinikos-txt.png">
+                            </a>
+                        </div>
+                        <div class="k-aside__brand-tools">
+                            <button class="k-aside__brand-aside-toggler k-aside__brand-aside-toggler--left" id="k_aside_toggler"><span></span></button>
+                        </div>
+                    </div>
+                    <!-- end:: Aside Brand -->
+
+                    <!-- begin:: Aside Menu -->
+                    <div class="k-aside-menu-wrapper k-grid__item k-grid__item--fluid" id="k_aside_menu_wrapper">
+                        <div id="k_aside_menu" class="k-aside-menu " data-kmenu-vertical="1" data-kmenu-scroll="1" data-kmenu-dropdown-timeout="500" >
+                            <ul class="k-menu__nav ">
+                                <li class="k-menu__item k-menu__item--submenu k-menu__item--open k-menu__item--here" aria-haspopup="true" data-kmenu-submenu-toggle="hover">
+                                    <a href="javascript:void(0);" class="k-menu__link k-menu__toggle"><i class="k-menu__link-icon flaticon2-graphic"></i><span class="k-menu__link-text">Recepção e Portaria</span><i class="k-menu__ver-arrow la la-angle-right"></i></a>
+                                    <div class="k-menu__submenu ">
+                                        <span class="k-menu__arrow"></span>
+                                        <ul class="k-menu__subnav">
+                                            <li class="k-menu__item k-menu__item--parent" aria-haspopup="true">
+                                                <span class="k-menu__link"><span class="k-menu__link-text">Recepção</span></span>
+                                            </li>
+                                            <li class="k-menu__item k-menu__item--active" aria-haspopup="true" >
+                                                <a href="#" class="k-menu__link ">
+                                                    <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                                    <span class="k-menu__link-text">Cadastro</span>
+                                                </a>
+                                            </li>
+                                            <li class="k-menu__item k-menu__item" aria-haspopup="true" >
+                                                <a href="#" class="k-menu__link ">
+                                                    <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                                    <span class="k-menu__link-text">Acolhimento</span>
+                                                </a>
+                                            </li>
+                                            <li class="k-menu__item" aria-haspopup="true" >
+                                                <a href="#" class="k-menu__link ">
+                                                    <i class="k-menu__link-bullet k-menu__link-bullet--dot"><span></span></i>
+                                                    <span class="k-menu__link-text">Pesquisa de Pacientes</span>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="k-menu__item " aria-haspopup="true" >
+                                    <a target="_blank" href="#" class="k-menu__link "><i class="k-menu__link-icon flaticon2-gear"></i><span class="k-menu__link-text">Ambulatório</span></a>
+                                </li>
+                                <li class="k-menu__item " aria-haspopup="true" >
+                                    <a target="_blank" href="#" class="k-menu__link "><i class="k-menu__link-icon flaticon2-gear"></i><span class="k-menu__link-text">Urgência e Emergência</span></a>
+                                </li>
+                                <li class="k-menu__item " aria-haspopup="true" >
+                                    <a target="_blank" href="#" class="k-menu__link "><i class="k-menu__link-icon flaticon2-gear"></i><span class="k-menu__link-text">Laboratório</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end:: Aside Menu -->
+
+                    <!-- begin:: Aside Footer -->
+                    <div class="k-aside__footer k-grid__item" id="k_aside_footer">
+                        <div class="k-aside__footer-nav">
+                            <div class="k-aside__footer-item">
+                                <a href="#" class="btn btn-icon"><i class="flaticon2-gear"></i></a>
+                            </div>
+                            <div class="k-aside__footer-item">
+                                <a href="#" class="btn btn-icon"><i class="flaticon2-cube"></i></a>
+                            </div>
+                            <div class="k-aside__footer-item">
+                                <a href="#" class="btn btn-icon"><i class="flaticon2-bell-alarm-symbol"></i></a>
+                            </div>
+                            <div class="k-aside__footer-item">
+                                <button type="button" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flaticon2-add"></i> </button>
+                                <div class="dropdown-menu dropdown-menu-left">
+                                    <ul class="k-nav">
+                                        <li class="k-nav__section k-nav__section--first"> <span class="k-nav__section-text">Export Tools</span> </li>
+                                        <li class="k-nav__item">
+                                            <a href="#" class="k-nav__link"> <i class="k-nav__link-icon la la-print"></i> <span class="k-nav__link-text">Print</span> </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="#" class="k-nav__link"> <i class="k-nav__link-icon la la-copy"></i> <span class="k-nav__link-text">Copy</span> </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="#" class="k-nav__link"> <i class="k-nav__link-icon la la-file-excel-o"></i> <span class="k-nav__link-text">Excel</span> </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="#" class="k-nav__link"> <i class="k-nav__link-icon la la-file-text-o"></i> <span class="k-nav__link-text">CSV</span> </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="#" class="k-nav__link"> <i class="k-nav__link-icon la la-file-pdf-o"></i> <span class="k-nav__link-text">PDF</span> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="k-aside__footer-item">
+                                <a href="#" class="btn btn-icon"><i class="flaticon2-calendar-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end:: Aside Footer-->
+                </div>
+                <!-- end:: Aside -->
+
+                <!-- begin:: Wrapper -->
+                <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor k-wrapper" id="k_wrapper">
+                    <!-- begin:: Header -->
+                    <div id="k_header" class="k-header k-grid__item k-header--fixed" >
+                        <button class="k-header-menu-wrapper-close" id="k_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
+
+                        <!-- begin:: Dados do Paciente -->
+						<div class="k-header-menu-wrapper" id="k_header_menu_wrapper">
+							<!-- <div id="k_header_menu" class="k-header-menu k-header-menu-mobile k-header-menu--layout-"></div> -->	
+                            
+                            <div class="bs-avatar mr-2 ml-2">
+								<img src="assets/media/users/100_11.jpg" title="Dados do Paciente" class="m-1" alt="avatar">
+                            </div>
+                            <div class="bs-nomes">
+                            	<span class="maior d-block mt-3 mr-2 mb-0 ml-2">Marcela de Souza</span>
+                                <span class="menor d-block ml-2 mr-2">Fernando Gomes Rosas de Souza</span>
+                            </div>
+                            <div class="bs-icones">
+                            	<span class="idade mt-2 pl-2 p-0 d-block float-left border-left">28</span>
+                                <span class="sexo mt-3 d-block text-primary"><i class="fa fa-female fa-fw" title="Feminino"></i></span>
+                            </div>
+
+                            <div class="bs-infopac mt-3 ml-2 pr-3 border-right">
+                                <span><strong>Código: </strong>068794489798</span>
+                                <span><strong>Prontuário: </strong>164321</span>
+                            </div>
+                            <div class="bs-infopac mt-3 ml-2 pl-2">
+                                <span><strong>CNS: </strong>65416568787167</span>
+                                <span><strong>Boletim: </strong>33465</span>
+                            </div>
+
+                            <div class="bs-infopac mt-3 ml-2 pt-1 pl-3 border-left">
+                                <!-- <label class="d-block">Sinais Vitais</label> -->
+                                <i class="fa fa-heartbeat fa-2x mr-2" title="Sinais Vitais"></i>
+                                <i class="fa fa-clipboard-list fa-2x" title="Lista de Atendimentos"></i>
+                            </div>
+
+						</div>
+                        <!-- end:: Dados do Paciente -->
+
+
+
+
+                        <!-- begin:: Header Topbar -->
+                        <div class="k-header__topbar">
+                            <!--begin: Search -->
+                            <div class="k-header__topbar-item k-header__topbar-item--search dropdown">
+                                <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0">
+                                    <span class="k-header__topbar-icon" ><i class="flaticon2-search-1"></i></span>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-top-unround dropdown-menu-anim dropdown-menu-lg">
+                                    <div class="k-quick-search k-quick-search--dropdown k-quick-search--result-compact" id="k_quick_search_dropdown">
+                                        <form method="get" class="k-quick-search__form">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="flaticon2-search-1"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control k-quick-search__input" placeholder="Search...">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="la la-close k-quick-search__close"></i></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <div class="k-quick-search__wrapper k-scroll" data-scroll="true" data-height="325" data-mobile-height="200"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Search -->
+                            <!--begin: Notifications -->
+                            <div class="k-header__topbar-item dropdown">
+                                <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="30px -2px" aria-expanded="true">
+                                    <span class="k-header__topbar-icon"> <i class="flaticon2-bell-alarm-symbol"></i> <span class="k-badge k-badge--dot k-badge--notify k-badge--sm k-badge--brand"></span> </span>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-lg">
+                                    <form>
+                                        <div class="k-head" style="background-image: url(assets/media/misc/head_bg_sm.jpg)">
+                                            <h3 class="k-head__title">
+                                                User Notifications
+                                            </h3>
+                                            <div class="k-head__sub"><span class="k-head__desc">23 new notifications</span></div>
+                                        </div>
+                                        <div class="k-notification k-margin-t-30 k-margin-b-20 k-scroll" data-scroll="true" data-height="270" data-mobile-height="220">
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-line-chart k-font-success"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New order has been received </div>
+                                                    <div class="k-notification__item-time"> 2 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-box-1 k-font-brand"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New customer is registered </div>
+                                                    <div class="k-notification__item-time"> 3 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-chart2 k-font-danger"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> Application has been approved </div>
+                                                    <div class="k-notification__item-time"> 3 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-image-file k-font-warning"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New file has been uploaded </div>
+                                                    <div class="k-notification__item-time"> 5 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-bar-chart k-font-info"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New user feedback received </div>
+                                                    <div class="k-notification__item-time"> 8 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-pie-chart-2 k-font-success"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> System reboot has been successfully completed </div>
+                                                    <div class="k-notification__item-time"> 12 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-favourite k-font-focus"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New order has been placed </div>
+                                                    <div class="k-notification__item-time"> 15 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item k-notification__item--read">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-safe k-font-primary"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> Company meeting canceled </div>
+                                                    <div class="k-notification__item-time"> 19 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-psd k-font-success"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New report has been received </div>
+                                                    <div class="k-notification__item-time"> 23 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon-download-1 k-font-danger"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> Finance report has been generated </div>
+                                                    <div class="k-notification__item-time"> 25 hrs ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon-security k-font-warning"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New customer comment recieved </div>
+                                                    <div class="k-notification__item-time"> 2 days ago </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="k-notification__item">
+                                                <div class="k-notification__item-icon"> <i class="flaticon2-pie-chart k-font-focus"></i> </div>
+                                                <div class="k-notification__item-details">
+                                                    <div class="k-notification__item-title"> New customer is registered </div>
+                                                    <div class="k-notification__item-time"> 3 days ago </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--end: Notifications -->
+                            <!--begin: Quick Actions --
+                            <div class="k-header__topbar-item">
+                                <div class="k-header__topbar-wrapper" id="k_offcanvas_toolbar_quick_actions_toggler_btn">
+                                    <span class="k-header__topbar-icon"><i class="flaticon2-gear"></i></span>
+                                </div>
+                            </div>
+                            <!--end: Quick Actions -->
+                            <!--begin:: Languages --
+                            <div class="k-header__topbar-item k-header__topbar-item--langs">
+                                <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px -2px">
+                                    <span class="k-header__topbar-icon">
+                                        <img class="" src="assets/media/flags/020-flag.svg" alt="" />
+                                    </span>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround">
+                                    <ul class="k-nav k-margin-t-10 k-margin-b-10">
+                                        <li class="k-nav__item k-nav__item--active">
+                                            <a href="#" class="k-nav__link">
+                                                <span class="k-nav__link-icon">
+                                                    <img src="assets/media/flags/020-flag.svg" alt="" />
+                                                </span>
+                                                <span class="k-nav__link-text">English</span> 
+                                            </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="#" class="k-nav__link">
+                                                <span class="k-nav__link-icon">
+                                                    <img src="assets/media/flags/016-spain.svg" alt="" />
+                                                </span>
+                                                <span class="k-nav__link-text">Spanish</span> 
+                                            </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="#" class="k-nav__link">
+                                                <span class="k-nav__link-icon">
+                                                    <img src="assets/media/flags/017-germany.svg" alt="" />
+                                                </span>
+                                                <span class="k-nav__link-text">German</span> 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end:: Languages -->
+                            <!--begin: User Bar -->
+                            <div class="k-header__topbar-item k-header__topbar-item--user">
+                                <div class="k-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px -2px">
+                                    <div class="k-header__topbar-user">
+                                        <span class="k-header__topbar-welcome k-hidden-mobile">Hi,</span> <span class="k-header__topbar-username k-hidden-mobile">Sean</span> 
+                                        <img alt="Pic" src="assets/media/users/300_25.jpg" />
+                                        <!--use below badge element instead the user avatar to display username's first letter(remove k-hidden class to display it) -->
+                                        <span class="k-badge k-badge--username k-badge--lg k-badge--brand k-hidden k-badge--bold">S</span> 
+                                    </div>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-sm">
+                                    <div class="k-user-card k-margin-b-50 k-margin-b-30-tablet-and-mobile" style="background-image: url(assets/media/misc/head_bg_sm.jpg)">
+                                        <div class="k-user-card__wrapper">
+                                            <div class="k-user-card__pic">
+                                                <img alt="Pic" src="assets/media/users/300_21.jpg" />
+                                            </div>
+                                            <div class="k-user-card__details">
+                                                <div class="k-user-card__name">Alex Stone</div>
+                                                <div class="k-user-card__position">CTO, Loop Inc.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="k-nav k-margin-b-10">
+                                        <li class="k-nav__item">
+                                            <a href="default/custom_user_profile-v1.html" class="k-nav__link">
+                                                <span class="k-nav__link-icon"><i class="flaticon2-calendar-3"></i></span>
+                                                <span class="k-nav__link-text">My Profile</span> 
+                                            </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="default/custom_user_profile-v1.html" class="k-nav__link">
+                                                <span class="k-nav__link-icon"><i class="flaticon2-browser-2"></i></span>
+                                                <span class="k-nav__link-text">My Tasks</span> 
+                                            </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="default/custom_user_profile-v1.html" class="k-nav__link">
+                                                <span class="k-nav__link-icon"><i class="flaticon2-mail"></i></span>
+                                                <span class="k-nav__link-text">Messages</span> 
+                                            </a>
+                                        </li>
+                                        <li class="k-nav__item">
+                                            <a href="default/custom_user_profile-v1.html" class="k-nav__link">
+                                                <span class="k-nav__link-icon"><i class="flaticon2-gear"></i></span>
+                                                <span class="k-nav__link-text">Settings</span> 
+                                            </a>
+                                        </li>
+                                        <li class="k-nav__item k-nav__item--custom k-margin-t-15"> <a href="default/custom_user_login-v2.html" target="_blank" class="btn btn-outline-metal btn-hover-brand btn-upper btn-font-dark btn-sm btn-bold">Sign Out</a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--end: User Bar -->
+                            <!--begin:: Quick Panel Toggler -->
+                            <div class="k-header__topbar-item k-header__topbar-item--quick-panel" data-toggle="k-tooltip" title="Quick panel" data-placement="right">
+                                <span class="k-header__topbar-icon" id="k_quick_panel_toggler_btn"> <i class="flaticon2-grids"></i> </span>
+                            </div>
+                            <!--end:: Quick Panel Toggler -->
+                        </div>
+                        <!-- end:: Header Topbar -->
+                    </div>
+                    <!-- end:: Header -->
+                    <div class="k-grid__item k-grid__item--fluid k-grid k-grid--hor">
+                        <!-- begin:: Subheader -->
+                        <div class="k-subheader k-grid__item" id="k_subheader">
+                            <div class="k-subheader__main">
+                                <h3 class="k-subheader__title">Classificação de Risco</h3>
+                                <span class="k-subheader__separator k-hidden"></span> 
+                                <div class="k-subheader__breadcrumbs">
+                                    <a href="#" class="k-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+                                    <!--
+                                    <span class="k-subheader__breadcrumbs-separator"></span> <a href="" class="k-subheader__breadcrumbs-link"> Dashboards </a> <span class="k-subheader__breadcrumbs-separator"></span> <a href="" class="k-subheader__breadcrumbs-link"> Navy Aside </a> 
+                                    <span class="k-subheader__breadcrumbs-link k-subheader__breadcrumbs-link--active">Active link</span> -->
+                                </div>
+                            
+                            </div>
+                            <div class="k-subheader__toolbar">
+                                <div class="k-subheader__wrapper">
+                                    <a href="#" class="btn btn-icon btn btn-label btn-label-brand btn-bold" data-toggle="k-tooltip" title="Reports" data-placement="top"><i class="flaticon2-writing"></i></a>
+                                    <a href="#" class="btn btn-icon btn btn-label btn-label-brand btn-bold" data-toggle="k-tooltip" title="Calendar" data-placement="top"><i class="flaticon2-hourglass-1"></i></a>
+                                    <div class="dropdown dropdown-inline" data-toggle="k-tooltip" title="Quick actions" data-placement="top">
+                                        <a href="#" class="btn btn-icon btn btn-label btn-label-brand btn-bold" data-toggle="dropdown" data-offset="0 0" aria-haspopup="true" aria-expanded="false"> <i class="flaticon2-add-1"></i> </a>
+                                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                                            <ul class="k-nav k-nav--active-bg" role="tablist">
+                                                <li class="k-nav__item">
+                                                    <a href="" class="k-nav__link"> <i class="k-nav__link-icon flaticon2-psd"></i> <span class="k-nav__link-text">Document</span> </a>
+                                                </li>
+                                                <li class="k-nav__item">
+                                                    <a class="k-nav__link" role="tab" > <i class="k-nav__link-icon flaticon2-supermarket"></i> <span class="k-nav__link-text">Message</span> </a>
+                                                </li>
+                                                <li class="k-nav__item">
+                                                    <a href="" class="k-nav__link"> <i class="k-nav__link-icon flaticon2-shopping-cart"></i> <span class="k-nav__link-text">Product</span> </a>
+                                                </li>
+                                                <li class="k-nav__item">
+                                                    <a class="k-nav__link" role="tab" >
+                                                        <i class="k-nav__link-icon flaticon2-chart2"></i> <span class="k-nav__link-text">Report</span> 
+                                                        <span class="k-nav__link-badge"> <span class="k-badge k-badge--danger k-badge--inline k-badge--rounded">pdf</span> </span>
+                                                    </a>
+                                                </li>
+                                                <li class="k-nav__item">
+                                                    <a href="" class="k-nav__link"> <i class="k-nav__link-icon flaticon2-sms"></i> <span class="k-nav__link-text">Post</span> </a>
+                                                </li>
+                                                <li class="k-nav__item">
+                                                    <a href="" class="k-nav__link"> <i class="k-nav__link-icon flaticon2-avatar"></i> <span class="k-nav__link-text">Customer</span> </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-sm btn-elevate btn-brand btn-elevate" id="k_dashboard_daterangepicker" data-toggle="k-tooltip" title="" data-placement="left" data-original-title="Select dashboard daterange"> <span class="k-opacity-7" id="k_dashboard_daterangepicker_title">Today:</span>&nbsp; <span class="k-font-bold" id="k_dashboard_daterangepicker_date">Jan 11</span> <i class="flaticon-calendar-with-a-clock-time-tools k-padding-l-5 k-padding-r-0"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end:: Subheader -->
+
+
+                        <!-- begin:: Content -->
+                        <div class="k-content k-grid__item k-grid__item--fluid" id="k_content">
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <!--begin::Form-->
+                                    <form class="k-form k-form--label-right clean_on">
+                                        
+                                        <!--begin: Portlet Main-->
+                                        <div class="k-portlet">
+                                            <div class="k-portlet__body">
+                                                
+                                                <!--begin::Accordion-->
+                                                <div class="accordion accordion-light" id="accordionExample1">
+                                                    
+                                                    <!--begin: Card 1 : Classificação -->
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingOne1">
+                                                            <div class="card-title" data-target="#collapseOne1" data-toggle="collapse" aria-expanded="false" aria-controls="collapseOne1">
+                                                                <i class="fa fa-heartbeat fa-fw"></i> Classificação
+                                                            </div>
+                                                        </div>
+                                                        <!-- show -->
+                                                        <div id="collapseOne1" class="collapse show" aria-labelledby="headingOne1" data-parent="#accordionExample1" style="">
+                                                            <div class="card-body"> 
+    
+                                                                <!--begin::Portlet 1-->
+                                                                <div class="k-portlet">
+                                                                    <!--
+                                                                    <div class="k-portlet__head">
+                                                                        <div class="k-portlet__head-label">
+                                                                            <h3 class="k-portlet__head-title">
+                                                                                Classificação
+                                                                            </h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    -->
+                                                                    <div class="k-portlet__body p-1">
+                                                                    	<div class="form-group row">
+																			<div class="col-lg-8">
+																				<label>Descrição da Queixa</label>
+																				<input type="text" class="form-control" name="DescricaoQueixa" placeholder="" value="">
+																			</div>
+                                                                            <div class="col-lg-4">
+                                                                                <label>Causa Externa</label>
+                                                                                <select class="form-control" name="CausaExterna">
+                                                                                    <option value="">-- Selecione --</option>
+                                                                                    <option value="">1</option>
+                                                                                    <option value="">2</option>
+                                                                                    <option value="">3</option>
+                                                                                    <option value="">4</option>
+                                                                                </select>
+                                                                            </div>
+																		</div>
+                                                                        
+                                                                        <div class="form-group row">
+                                                                            <!-- begin:: Bloco 1 -->
+                                                                            <div class="col-lg-8 rounded">
+                                                                               <label class="d-block w-100 mb-3 text-left">Escala de Dor</label>
+
+																				<div class="col-lg-2 col-md-6 col-sm-6 mb-2 float-left">
+                                                                                    <div class="text-center pb-2">
+                                                                                        <img src="assets/media/icons/ed-azul.png" class="smile" alt="Ausente">
+                                                                                    </div>
+                                                                                    <div class="btn-group btn-group-toggle mt-1 mb-1 w-100" data-toggle="buttons">
+                                                                                        <label class="btn ed ed-0 ed-opac text-light text-center p-1 cp clear" for="EscalaDor0">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor0" autocomplete="off" value="0" tabindex=""> 0
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="text-center p-1">
+                                                                                        <span class="ed-text">Sem Dor</span>
+                                                                                    </div>
+                                                                                </div>
+																				
+																				<div class="col-lg-2 col-md-6 col-sm-6 mb-2 float-left">
+                                                                                    <div class="text-center pb-2">
+                                                                                        <img src="assets/media/icons/ed-verde.png" class="smile" alt="Leve">
+                                                                                    </div>
+                                                                                    <div class="btn-group btn-group-toggle mt-1 mb-1 w-100" data-toggle="buttons">
+                                                                                        <label class="btn ed ed-1 ed-opac text-light text-center p-1 cp clear" for="EscalaDor1">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor1" autocomplete="off" value="0" tabindex=""> 1
+                                                                                        </label>
+																						<label class="btn ed ed-2 ed-opac text-light text-center p-1 cp clear" for="EscalaDor2">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor2" autocomplete="off" value="0" tabindex=""> 2
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="text-center p-1 rounded">
+                                                                                        <span class="ed-text">Leve</span>
+                                                                                    </div>
+                                                                                </div>
+																				
+																				<div class="col-lg-2 col-md-6 col-sm-6 mb-2 float-left">
+                                                                                    <div class="text-center pb-2">
+                                                                                        <img src="assets/media/icons/ed-amarelo.png" class="smile" alt="Moderada">
+                                                                                    </div>
+                                                                                    <div class="btn-group btn-group-toggle mt-1 mb-1 w-100" data-toggle="buttons">
+                                                                                        <label class="btn ed ed-3 ed-opac text-light text-center p-1 cp clear" for="EscalaDor3">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor3" autocomplete="off" value="0" tabindex=""> 3
+                                                                                        </label>
+																						<label class="btn ed ed-4 ed-opac text-light text-center p-1 cp clear" for="EscalaDor4">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor4" autocomplete="off" value="0" tabindex=""> 4
+                                                                                        </label>
+																						<label class="btn ed ed-5 ed-opac text-light text-center p-1 cp clear" for="EscalaDor5">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor5" autocomplete="off" value="0" tabindex=""> 5
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="text-center p-1 rounded">
+                                                                                        <span class="ed-text">Moderada</span>
+                                                                                    </div>
+                                                                                </div>
+																				
+																				<div class="col-lg-2 col-md-6 col-sm-6 mb-2 float-left">
+                                                                                    <div class="text-center pb-2">
+                                                                                        <img src="assets/media/icons/ed-laranja.png" class="smile" alt="Forte">
+                                                                                    </div>
+                                                                                    <div class="btn-group btn-group-toggle mt-1 mb-1 w-100" data-toggle="buttons">
+                                                                                        <label class="btn ed ed-6 ed-opac text-light text-center p-1 cp clear" for="EscalaDor6">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor6" autocomplete="off" value="0" tabindex=""> 6
+                                                                                        </label>
+																						<label class="btn ed ed-7 ed-opac text-light text-center p-1 cp clear" for="EscalaDor7">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor7" autocomplete="off" value="0" tabindex=""> 7
+                                                                                        </label>
+																						<label class="btn ed ed-8 ed-opac text-light text-center p-1 cp clear" for="EscalaDor8">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor8" autocomplete="off" value="0" tabindex=""> 8
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="text-center p-1 rounded">
+                                                                                        <span class="ed-text">Forte</span>
+                                                                                    </div>
+                                                                                </div>
+																				
+																				<div class="col-lg-2 col-md-6 col-sm-6 mb-2 float-left">
+                                                                                    <div class="text-center pb-2">
+                                                                                        <img src="assets/media/icons/ed-vermelho.png" class="smile" alt="Forte">
+                                                                                    </div>
+                                                                                    <div class="btn-group btn-group-toggle mt-1 mb-1 w-100" data-toggle="buttons">
+                                                                                        <label class="btn ed ed-9 ed-opac text-light text-center p-1 cp clear" for="EscalaDor9">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor9" autocomplete="off" value="0" tabindex=""> 9
+                                                                                        </label>
+																						<label class="btn ed ed-10 ed-opac text-light text-center p-1 cp clear" for="EscalaDor10">
+                                                                                            <input type="radio" name="EscalaDor" id="EscalaDor10" autocomplete="off" value="0" tabindex=""> 10
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="text-center p-1 rounded">
+                                                                                        <span class="ed-text">Intensa</span>
+                                                                                    </div>
+                                                                                </div>
+																				
+																				<div class="col-lg-9 mt-5 float-left">
+                                                                                    <label class="d-block text-left">Níveis de Consciência</label>
+
+                                                                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                                        <label class="btn btn-outline-dark cp">
+                                                                                            <input type="radio" name="nivelConsciencia" autocomplete="off" value="1"> Lúcido
+                                                                                        </label>
+                                                                                        <label class="btn btn-outline-dark cp">
+                                                                                            <input type="radio" name="nivelConsciencia" autocomplete="off" value="2"> Agitação
+                                                                                        </label>
+                                                                                        <label class="btn btn-outline-dark cp">
+                                                                                            <input type="radio" name="nivelConsciencia" autocomplete="off" value="3"> Desorientado
+                                                                                        </label>
+                                                                                        <label class="btn btn-outline-dark cp">
+                                                                                            <input type="radio" name="nivelConsciencia" autocomplete="off" value="4"> Inconsciente
+                                                                                        </label>
+                                                                                        <label class="btn btn-outline-dark cp">
+                                                                                            <input type="radio" name="nivelConsciencia" autocomplete="off" value="5"> Torporoso
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="col-lg-2 mt-5 float-left">
+                                                                                    <label>&nbsp;</label>
+                                                                                    <div class="k-checkbox-list mt-2 pl-3">
+                                                                                        <label class="k-checkbox k-checkbox--brand">
+                                                                                            <input type="checkbox" name="Sutura">Sutura<span></span> 
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- begin:: Bloco 1 -->
+
+                                                                            <!-- begin:: Bloco 2 -->
+                                                                            <div class="col-lg-4">
+
+                                                                                <div class="col-lg-12 float-left">
+                                                                                    <label>Peso, Altura, IMC</label>
+                                                                                    <div class="input-group-lg">
+                                                                                        <div class="input-group-prepend">
+                                                                                            <input type="text" class="form-control w-25" name="SV_Peso" id="SV_Peso" maxlength="5" placeholder="(kg)" value="">
+                                                                                            <input type="text" class="form-control w-25" name="SV_Altura" id="SV_Altura" maxlength="4" placeholder="(cm)" value="">
+																							<input type="text" class="form-control ch w-100" name="SV_IMC" id="SV_IMC" placeholder="IMC" data-content="" data-toggle="popover" data-placement="top" data-trigger="hover" style="background:#E9E8E8;" readonly value="">
+                                                                                        </div>
+                                                                                        <div class="form-text text-danger" style="height:15px !important;"><span class="oculta">Message Error</span></div>
+                                                                                    </div>
+                                                                                </div>
+																				
+																				<!--
+                                                                                <div class="col-lg-6 float-left">
+                                                                                    <label>IMC</label>
+                                                                                    <input type="text" class="form-control ch" name="SV_IMC" id="SV_IMC" data-content="" data-toggle="popover" data-placement="top" data-trigger="hover" style="background:#E9E8E8;" readonly value="">
+                                                                                    <div class="form-text text-danger" style="height:15px !important;"><span class="oculta">Message Error</span></div>
+                                                                                </div>
+																				-->
+
+                                                                                <div class="col-lg-6 float-left">
+                                                                                    <label>Temperatura</label>
+                                                                                    <input type="text" class="form-control sn" name="SV_Temperatura" maxlength="2" placeholder="(ºC)" value="">
+                                                                                    <div class="form-text text-danger" style="height:15px !important;"><span class="oculta">Message Error</span></div>
+                                                                                </div>
+                                                                            
+                                                                                <div class="col-lg-6 float-left">
+                                                                                    <label>Pre. Arterial (mmHg)</label>
+                                                                                    <div class="input-group-lg">
+                                                                                        <div class="input-group-prepend">
+                                                                                            <input type="text" class="form-control sn" name="SV_PreArterialDiastolica" maxlength="3" placeholder="Diastólica" title="Diastólica" value="">
+                                                                                            <input type="text" class="form-control sn" name="SV_PreArterialSistolica" maxlength="3" placeholder="Sistólica" title="Sistólica" value="">
+                                                                                        </div>
+                                                                                        <div class="form-text text-danger" style="height:15px !important;"><span class="oculta">Message Error</span></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                                <div class="col-lg-6 float-left">
+                                                                                    <label>Pulso</label>
+                                                                                    <input type="text" class="form-control sn" name="Pulso" placeholder="(bpm)" maxlength="3" value="">
+                                                                                    <div class="form-text text-danger" style="height:15px !important;"><span class="oculta">Message Error</span></div>
+                                                                                </div>
+
+                                                                                <div class="col-lg-6 float-left">
+                                                                                    <label>Freq. Respiratória</label>
+                                                                                    <input type="text" class="form-control sn" name="FreqRespiratoria" placeholder="(rpm)" maxlength="3" value="">
+                                                                                    <div class="form-text text-danger" style="height:15px !important;"><span class="oculta">Message Error</span></div>
+                                                                                </div>
+
+                                                                                <div class="col-lg-6 float-left">
+                                                                                    <label>Saturação O2(%)</label>
+                                                                                    <input type="text" class="form-control sn" name="Saturacao" placeholder="(%)" maxlength="3" value="">
+                                                                                    <div class="form-text text-danger" style="height:15px !important;"><span class="oculta">Message Error</span></div>
+                                                                                </div>
+
+                                                                                <div class="col-lg-6 mb-3 float-left">
+                                                                                    <label class="d-block">&nbsp;</label>
+                                                                                    <button type="button" class="btn btn-sm btn-accent mt-1" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Capturar Sinais Vitais"><i class="fa fa-heartbeat"></i> Capturar</button>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <!-- begin:: Bloco 2 -->
+
+
+                                                                        </div>
+                                                                        <!-- end: form-row-->
+                                                                    </div>
+    
+                                                                </div>
+                                                                <!--end::Portlet 1-->
+    
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end: Card 1 -->
+    
+
+                                                    <!--begin: Card 2 : Doenças Pré-Existentes -->
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingOne2">
+                                                            <div class="card-title" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                                                                <i class="fab fa-medrt fa-fw"></i> Doenças Pré-Existentes
+                                                            </div>
+                                                        </div>
+                                                        <div id="collapseOne2" class="collapse show" aria-labelledby="headingOne2" data-parent="#accordionExample1" style="">
+                                                            <div class="card-body"> 
+    
+                                                                <!--begin::Portlet 2-->
+                                                                <div class="k-portlet">
+                                                                    <!--
+                                                                    <div class="k-portlet__head">
+                                                                        <div class="k-portlet__head-label">
+                                                                            <h3 class="k-portlet__head-title">
+                                                                                Doenças Pré-Existentes
+                                                                            </h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    -->
+                                                                    <div class="k-portlet__body p-1">
+                                                                    
+                                                                        <div class="form-group row">
+                                                                            
+                                                                            <div class="col-lg-12 pt-3 pr-3 pb-3 pl-3 d-lg-flex">
+                                                                                <div class="k-checkbox-list">
+                                                                                    <label class="k-checkbox k-checkbox--brand">
+                                                                                        <input type="checkbox" name="DPE_Hipertensao" value="">Hipertensão<span></span>
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="k-checkbox-list ml-lg-4">
+                                                                                    <label class="k-checkbox k-checkbox--brand">
+                                                                                        <input type="checkbox" name="DPE_Diabete" value="">Diabete<span></span> 
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="k-checkbox-list ml-lg-4">
+                                                                                    <label class="k-checkbox k-checkbox--brand">
+                                                                                        <input type="checkbox" name="DPE_Cardiopata" value="">Cardiopata<span></span> 
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="k-checkbox-list ml-lg-4">
+                                                                                    <label class="k-checkbox k-checkbox--brand">
+                                                                                        <input type="checkbox" name="DPE_RenalCronico" value="">Renal Crônico<span></span> 
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="k-checkbox-list ml-lg-4">
+                                                                                    <label class="k-checkbox k-checkbox--brand" id="dpe_respcron">
+                                                                                        <input type="checkbox" name="DPE_RespCronico" value="">Respiratória Crônica<span></span>
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="k-checkbox-list ml-lg-4">
+                                                                                    <label class="k-checkbox k-checkbox--brand" id="dpe_outros">
+                                                                                        <input type="checkbox" name="DPE_Outros" value="">Outros<span></span> 
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+																			
+																			<div class="col-lg-12 oculta" id="dpe_respcron_box">
+																				<label>Respiratória Crônica</label>
+																				<textarea class="form-control" name="DoencaPreExistRespCron" rows="2" style="resize:none;"></textarea>
+																			</div>
+                                                                            <div class="col-lg-12 oculta" id="dpe_outros_box">
+                                                                                <label>Outros</label>
+                                                                                <textarea class="form-control" name="DoencaPreExistOutros" rows="2" style="resize:none;"></textarea>
+                                                                            </div>
+																			
+																			<div class="col-lg-12 mt-3">
+                                                                                <label>Avaliação</label>
+                                                                                <textarea class="form-control" name="DoencaPreExistAvaliacao" rows="3" style="resize:none;"></textarea>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group row">
+                                                                            <div class="col-lg-6">
+                                                                                <label>Como Chegou?</label>
+                                                                                <select class="form-control">
+                                                                                    <option value="">-- Selecione --</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label>Especialidade</label>
+                                                                                <select class="form-control">
+                                                                                    <option value="">-- Selecione --</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group row">
+																			<div class="col-lg-3">
+																				<label>Possui Alergia?</label>
+																				<select class="form-control" name="PossuiAlergia" id="PossuiAlergia">
+																					<option value="">-- Selecione --</option>
+																					<option value="1">Sim</option>
+																					<option value="2">Não</option>
+																					<option value="3">Não Informado</option>
+																				</select>
+																			</div>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Portlet 2-->
+    
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end: Card 2 -->
+
+
+                                                    <!--begin: Card 3 : Alergia -->
+                                                    <div class="card oculta" id="AlergiaCard">
+                                                        <div class="card-header" id="headingOne3">
+                                                            <div class="card-title" data-toggle="collapse" data-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">
+                                                                <i class="fa fa-allergies fa-fw"></i> Alergia
+                                                            </div>
+                                                        </div>
+                                                        <div id="collapseOne3" class="collapse" aria-labelledby="headingOne3" data-parent="#accordionExample1" style="">
+                                                            <div class="card-body"> 
+    
+                                                                <!--begin::Portlet 1-->
+                                                                <div class="k-portlet">
+                                                                    <!--
+                                                                    <div class="k-portlet__head">
+                                                                        <div class="k-portlet__head-label">
+                                                                            <h3 class="k-portlet__head-title">Alergia</h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    -->
+                                                                    <div class="k-portlet__body p-1">
+                                                                    
+                                                                        <div class="form-group row">
+																			<div class="col-lg-4">
+																				<label>Tipo de Alergia</label>
+																				<select class="form-control" name="AlergiaTipo">
+																					<option value="">-- Selecione --</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-4">
+																				<label>Alergia</label>
+																				<select class="form-control" name="AlergiaNome">
+																					<option value="">-- Selecione --</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-4">
+																				<label>Localização</label>
+																				<select class="form-control" name="AlergiaLocalizacao">
+																					<option value="">-- Selecione --</option>
+																				</select>
+																			</div>
+                                                                        </div>
+																		
+																		<div class="form-group row">
+																			<div class="col-lg-4">
+																				<label>Reação</label>
+																				<select class="form-control" name="AlergiaReacao">
+																					<option value="">-- Selecione --</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-4">
+																				<label>Severidade</label>
+																				<select class="form-control" name="AlergiaSeveridade">
+																					<option value="">-- Selecione --</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-2">
+																				<label>Data dos Sintomas</label>
+																				<input type="text" class="form-control mask_data" name="AlergiaData" placeholder="00/00/0000" value="">
+																			</div>
+																			<div class="col-lg-2">
+																				<div class="k-checkbox-list">
+																					<label>Status</label>
+																					<label class="k-checkbox k-checkbox--brand mt-2">
+																						<input type="checkbox" name="AlergiaAtivo">Ativo<span></span>
+																					</label>
+																				</div>
+																			</div>
+                                                                        </div>
+																		
+																		<div class="form-group row">
+																			<div class="col">
+																				<button type="button" class="btn btn-success"><i class="fa fa-plus fa-fw"></i> Adicionar</button>
+																			</div>
+																		</div>
+																		
+																		<div class="form-group row">
+																			<div class="col">
+																				<table class="table">
+																					<thead class="thead-light">
+																						<tr class="text-center">
+																							<th>Alergia</th>
+																							<th>Localização</th>
+																							<th>Reação</th>
+																							<th>Severidade</th>
+																							<th>Data</th>
+																							<th>Situações</th>
+																							<th colspan="2">Ações</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr class="text-center">
+																							<td>Bactrim</td>
+																							<td>Pele</td>
+																							<td>Coceira</td>
+																							<td>Suave</td>
+																							<td>25/04/2019</td>
+																							<td>Situação</td>
+																							<td><a href="#"><i class="fa fa-pen fa-fw" title="Editar"></i></a></td>
+																							<td><a href="#"><i class="fa fa-trash fa-fw" title="Excluir"></i></a></td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</div>
+																		</div>
+																		
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Portlet 1-->
+    
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end: Card 3 -->
+
+
+                                                    <!--begin: Card 4 : Escala de Glasgow -->
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingOne4">
+                                                            <div class="card-title" data-toggle="collapse" data-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
+                                                                <i class="fa fa-diagnoses fa-fw"></i> Escala de Glasgow
+                                                            </div>
+                                                        </div>
+                                                        <div id="collapseOne4" class="collapse" aria-labelledby="headingOne4" data-parent="#accordionExample1" style="">
+                                                            <div class="card-body"> 
+    
+                                                                <!--begin::Portlet 2-->
+                                                                <div class="k-portlet">
+                                                                    <!--
+                                                                    <div class="k-portlet__head">
+                                                                        <div class="k-portlet__head-label">
+                                                                            <h3 class="k-portlet__head-title">
+                                                                                Escala de Glasgow
+                                                                            </h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    -->
+                                                                    <div class="k-portlet__body p-1">
+                                                                    
+                                                                        <div class="form-group row">
+																			
+																			<div class="col-lg-3">
+																				<label>Abertura Ocular</label>
+																				<select class="form-control" name="EG_AberturaOcular" id="EG_AberturaOcular">
+																					<option value="">-- Selecione --</option>
+																					<option value="4">Espontâneo</option>
+																					<option value="3">Ao som</option>
+																					<option value="2">À pressão</option>
+																					<option value="1">Ausente</option>
+																					<option value="0">Não testável</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-3">
+																				<label>Resposta Verbal</label>
+																				<select class="form-control" name="EG_RespostaVerbal" id="EG_RespostaVerbal">
+																					<option value="">-- Selecione --</option>
+																					<option value="5">Orientada</option>
+																					<option value="4">Confusa</option>
+																					<option value="3">Palavras</option>
+																					<option value="2">Sons</option>
+																					<option value="1">Ausente</option>
+																					<option value="0">Não testável</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-3">
+																				<label>Resposta Motora</label>
+																				<select class="form-control" name="EG_RespostaMotora" id="EG_RespostaMotora">
+																					<option value="">-- Selecione --</option>
+																					<option value="6">Obedece a comandos</option>
+																					<option value="5">Localizadora</option>
+																					<option value="4">Flexão normal</option>
+																					<option value="3">Flexão anormal</option>
+																					<option value="2">Extensão</option>
+																					<option value="1">Ausente</option>
+																					<option value="0">Não testável</option>
+																				</select>
+																			</div>
+																			<div class="col-lg-3">
+																				<label>Status</label>
+																				<div class="input-group">
+                                                        							<input type="text" class="form-control" name="EscalaGlasgow" id="EscalaGlasgow" style="background:#E9E8E8;" readonly value="">
+                                                        							<div class="input-group-append">
+                                                            							<button class="btn btn-secondary text-center" type="button" id="EG_Clean" title="Limpar opções da Escala de Glasgow"><i class="fa fa-trash-alt fa-fw"></i></button>
+                                                        							</div>
+																				</div>
+																			</div>																			
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Portlet 2-->
+    
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end: Card 4 -->
+													
+													<!--begin: Card 5 : Dados da Ocorrência -->
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingOne5">
+                                                            <div class="card-title" data-toggle="collapse" data-target="#collapseOne5" aria-expanded="false" aria-controls="collapseOne5"> <i class="flaticon-placeholder-3"></i> Dados da Ocorrência </div>
+                                                        </div>
+                                                        <div id="collapseOne5" class="collapse" aria-labelledby="headingOne5" data-parent="#accordionExample1" style="">
+                                                            <div class="card-body"> 
+    
+                                                                <!--begin::Portlet 2-->
+                                                                <div class="k-portlet">
+                                                                    <!--
+                                                                    <div class="k-portlet__head">
+                                                                        <div class="k-portlet__head-label">
+                                                                            <h3 class="k-portlet__head-title">
+                                                                                Ocorrência
+                                                                            </h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    -->
+                                                                    <div class="k-portlet__body p-1">
+                                                                    
+                                                                        <div class="form-group row">
+                                                                            <div class="col-lg-4">
+                                                                                <label>Procedência</label>
+                                                                                <input type="text" class="form-control" name="DO_Procedencia" placeholder="" maxlength="" value="" tabindex="21">
+                                                                                <span class="form-text text-danger oculta">Message Error</span>
+                                                                            </div>
+                                                                            <div class="col-lg-3">
+                                                                                <label>Tipo de Ocorrência</label>
+                                                                                <select name="DO_TipoOcorrencia" class="form-control" tabindex="22">
+                                                                                	<option value="">-- Selecione --</option>
+                                                                                    <option value="">Acidente de Trabalho</option>
+                                                                                    <option value="">Afogamentos </option>
+                                                                                    <option value="">Agressões (outras idades)</option>
+                                                                                    <option value="">Agressões ao idoso (60 anos ou mais)</option>
+                                                                                    <option value="">Agressões às crianças (menores de 12 anos)</option>
+                                                                                    <option value="">Atropelamentos</option>
+                                                                                </select>
+                                                                                <span class="form-text text-danger oculta">Message Error</span>
+                                                                            </div>
+                                                                            <div class="col-lg-2">
+                                                                                <label>Data</label>
+                                                                                <input type="text" class="form-control mask_data" name="DO_Data" placeholder="" maxlength="" value="" tabindex="22">
+                                                                                <span class="form-text text-danger oculta">Message Error</span>
+                                                                            </div>
+                                                                            <div class="col-lg-1">
+                                                                                <label>Hora</label>
+                                                                                <input type="text" class="form-control mask_hour" name="DO_Hora" placeholder="" maxlength="" value="" tabindex="23">
+                                                                                <span class="form-text text-danger oculta">Message Error</span>
+                                                                            </div>
+                                                                            <div class="col-lg-2">
+                                                                                <label class="d-block">&nbsp;</label>
+                                                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                                    <label class="btn btn-outline-info clear" for="M" style="cursor:pointer;" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Perfuração por Arma Branca">
+                                                                                        <input type="checkbox" name="DO_PAB" autocomplete="off" value=""> PAB
+                                                                                    </label>
+                                                                                    <label class="btn btn-outline-info clear" for="F" style="cursor:pointer;" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Perfuração por Arma de Fogo">
+                                                                                        <input type="checkbox" name="DO_PAF" autocomplete="off" value=""> PAF
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        <div class="form-group row">
+                                                                            <div class="col-lg-2">
+                                                                                <label>CEP</label>
+                                                                                <input type="text" class="form-control mask_cep" name="DO_CEP" placeholder="00000-000" value="" tabindex="24">
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <label>Logradouro</label>
+                                                                                <input type="text" class="form-control" name="DO_Logradouro" placeholder="" maxlength="150" value="" tabindex="25">
+                                                                            </div>
+                                                                            <div class="col-lg-2">
+                                                                                <label>Número</label>
+                                                                                <input type="text" class="form-control" name="DO_Numero" placeholder="" maxlength="5" value="" tabindex="26">
+                                                                            </div>
+                                                                            <div class="col-lg-2">
+                                                                                <label>Complemento</label>
+                                                                                <input type="text" class="form-control" name="DO_Complemento" placeholder="" maxlength="30" value="" tabindex="27">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <div class="col-lg-6">
+                                                                                <label>Bairro</label>
+                                                                                <select class="form-control" name="DO_Bairro" tabindex="28">
+                                                                                    <option>-Selecione-</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-lg-4">
+                                                                                <label>Munícipio</label>
+                                                                                <select class="form-control" name="DO_Municipio" tabindex="29">
+                                                                                    <option>-Selecione-</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="col-lg-2">
+                                                                                <label>Estado</label>
+                                                                                <select class="form-control" name="DO_Estado" tabindex="30">
+                                                                                    <option>-Selecione-</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Portlet 2-->
+    
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end: Card 5 -->
+											
+                                                    <!--begin: Card 6 : Risco -->
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingOne6">
+                                                            <div class="card-title" data-toggle="collapse" data-target="#collapseOne6" aria-expanded="false" aria-controls="collapseOne6">
+                                                                <i class="flaticon-users-1"></i> Risco do Paciente
+                                                            </div>
+                                                        </div>
+                                                        <div id="collapseOne6" class="collapse show" aria-labelledby="headingOne6" data-parent="#accordionExample1" style="">
+                                                            <div class="card-body"> 
+    
+                                                                <!--begin::Portlet 2-->
+                                                                <div class="k-portlet">
+                                                                    <!--
+                                                                    <div class="k-portlet__head">
+                                                                        <div class="k-portlet__head-label">
+                                                                            <h3 class="k-portlet__head-title">
+                                                                                Risco
+                                                                            </h3>
+                                                                        </div>
+                                                                    </div>
+                                                                    -->
+                                                                    <div class="k-portlet__body p-1">
+                                                                    
+                                                                        <div class="form-group row">
+																			<div class="col-lg-6">
+                                                                                <label class="d-block text-left">Risco</label>
+
+                                                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                                                    <label class="btn risco-azul cp clear" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="">
+                                                                                        <input type="radio" name="Risco" autocomplete="off" value="" > Azul
+                                                                                    </label>
+                                                                                    <label class="btn risco-verde cp clear" for="" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="">
+                                                                                        <input type="radio" name="Risco" autocomplete="off" value=""> Verde
+                                                                                    </label>
+                                                                                    <label class="btn risco-amarelo cp clear d-flex" for="" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Consultório">
+                                                                                        <input type="radio" name="Risco" autocomplete="off" value=""><i class="fa fa-user-md fa-fw d-block mr-1"></i><span class="d-block"> Amarelo</span>
+                                                                                    </label>
+                                                                                    <label class="btn risco-amarelo cp clear d-flex" for="" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Observação">
+                                                                                        <input type="radio" name="Risco" autocomplete="off" value=""><i class="fa fa-eye fa-fw d-block mr-1"></i><span class="d-block"> Amarelo</span>
+                                                                                    </label>
+                                                                                    <label class="btn risco-laranja cp clear" for="" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="">
+                                                                                        <input type="radio" name="Risco" autocomplete="off" value=""> Laranja
+                                                                                    </label>
+                                                                                    <label class="btn risco-vermelho cp clear" for="" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="">
+                                                                                        <input type="radio" name="Risco" autocomplete="off" value=""> Vermelho
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Portlet 2-->
+    
+                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--end: Card 6 -->
+
+
+                                                </div>
+                                                <!--end::Accordion-->
+                                            </div>
+                                            <!--end::Portlet-body -->
+                                            
+                                        </div>
+                                        <!--begin::Portlet Main-->
+										
+										<!--begin:: Form Buttons -->
+                                        <div class="k-portlet__foot">
+                                            <div class="k-form__actions">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <!--<button type="button" class="btn btn-accent">Biometria</button>-->
+                                                        <button type="button" id="btn_formclear" class="btn btn-metal" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="Limpar Campos do Formulário" >Limpar</button>
+                                                    </div>
+                                                    <div class="col-lg-6 text-right">
+                                                        <button type="reset" class="btn btn-primary" tabindex="64">Salvar</button>
+                                                        <button type="reset" class="btn btn-metal" tabindex="65">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--end:: Form Buttons -->
+
+    
+                                    </form>
+                                    <!--end::Form-->
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- end:: Content -->
+
+
+                    </div>
+                    <!-- begin:: Footer -->
+                    <div class="k-footer k-grid__item k-grid k-grid--desktop k-grid--ver-desktop">
+                        <div class="k-footer__copyright"> 2018&nbsp;&copy;&nbsp;<a href="http://www.ecosistemas.com.br" target="_blank" class="k-link">ECO Sistemas</a></div>
+                        <div class="k-footer__menu">
+                            <a href="http://www.ecosistemas.com.br/empresa/" target="_blank" class="k-footer__menu-link k-link">Sobre</a>
+                            <a href="http://www.ecosistemas.com.br/solucoes/" target="_blank" class="k-footer__menu-link k-link">Soluções</a>
+                            <a href="http://www.ecosistemas.com.br/contato/" target="_blank" class="k-footer__menu-link k-link">Contato</a>
+                        </div>
+                    </div>
+                    <!-- end:: Footer -->
+                </div>
+                <!-- end:: Wrapper -->
+            </div>
+            <!-- end:: Page -->
+        </div>
+        <!-- end:: Root -->
+        <!-- begin:: Topbar Offcanvas Panels -->
+        <!-- begin::Offcanvas Toolbar Quick Actions -->
+        <div id="k_offcanvas_toolbar_quick_actions" class="k-offcanvas-panel">
+            <div class="k-offcanvas-panel__head">
+                <h3 class="k-offcanvas-panel__title">
+                    Quick Actions 
+                </h3>
+                <a href="#" class="k-offcanvas-panel__close" id="k_offcanvas_toolbar_quick_actions_close"><i class="flaticon2-delete"></i></a>
+            </div>
+            <div class="k-offcanvas-panel__body">
+                <div class="k-grid-nav-v2">
+                    <a href="#" class="k-grid-nav-v2__item">
+                        <div class="k-grid-nav-v2__item-icon"><i class="flaticon2-box"></i></div>
+                        <div class="k-grid-nav-v2__item-title">Orders</div>
+                    </a>
+                    <a href="#" class="k-grid-nav-v2__item">
+                        <div class="k-grid-nav-v2__item-icon"><i class="flaticon-download-1"></i></div>
+                        <div class="k-grid-nav-v2__item-title">Uploades</div>
+                    </a>
+                    <a href="#" class="k-grid-nav-v2__item">
+                        <div class="k-grid-nav-v2__item-icon"><i class="flaticon2-supermarket"></i></div>
+                        <div class="k-grid-nav-v2__item-title">Products</div>
+                    </a>
+                    <a href="#" class="k-grid-nav-v2__item">
+                        <div class="k-grid-nav-v2__item-icon"><i class="flaticon2-avatar"></i></div>
+                        <div class="k-grid-nav-v2__item-title">Customers</div>
+                    </a>
+                    <a href="#" class="k-grid-nav-v2__item">
+                        <div class="k-grid-nav-v2__item-icon"><i class="flaticon2-list"></i></div>
+                        <div class="k-grid-nav-v2__item-title">Blog Posts</div>
+                    </a>
+                    <a href="#" class="k-grid-nav-v2__item">
+                        <div class="k-grid-nav-v2__item-icon"><i class="flaticon2-settings"></i></div>
+                        <div class="k-grid-nav-v2__item-title">Settings</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- end::Offcanvas Toolbar Quick Actions -->
+        <!-- end:: Topbar Offcanvas Panels -->
+        <!-- begin:: Quick Panel -->
+        <div id="k_quick_panel" class="k-offcanvas-panel">
+            <div class="k-offcanvas-panel__nav">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="nav-item active"> <a class="nav-link active" data-toggle="tab" href="#k_quick_panel_tab_notifications" role="tab">Notifications</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#k_quick_panel_tab_actions" role="tab">Actions</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#k_quick_panel_tab_settings" role="tab">Settings</a> </li>
+                </ul>
+                <button class="k-offcanvas-panel__close" id="k_quick_panel_close_btn"><i class="flaticon2-delete"></i></button>
+            </div>
+            <div class="k-offcanvas-panel__body">
+                <div class="tab-content">
+                    <div class="tab-pane fade show k-offcanvas-panel__content k-scroll active" id="k_quick_panel_tab_notifications" role="tabpanel">
+                        <!--Begin::Timeline -->
+                        <div class="k-timeline">
+                            <!--Begin::Item -->
+                            <div class="k-timeline__item k-timeline__item--success">
+                                <div class="k-timeline__item-section">
+                                    <div class="k-timeline__item-section-border">
+                                        <div class="k-timeline__item-section-icon"> <i class="flaticon-feed k-font-success"></i> </div>
+                                    </div>
+                                    <span class="k-timeline__item-datetime">02:30 PM</span> 
+                                </div>
+                                <a href="" class="k-timeline__item-text"> KeenThemes created new layout whith tens of new options for Keen Admin panel </a> 
+                                <div class="k-timeline__item-info"> HTML,CSS,VueJS </div>
+                            </div>
+                            <!--End::Item -->
+                            <!--Begin::Item -->
+                            <div class="k-timeline__item k-timeline__item--danger">
+                                <div class="k-timeline__item-section">
+                                    <div class="k-timeline__item-section-border">
+                                        <div class="k-timeline__item-section-icon"> <i class="flaticon-safe-shield-protection k-font-danger"></i> </div>
+                                    </div>
+                                    <span class="k-timeline__item-datetime">01:20 AM</span> 
+                                </div>
+                                <a href="" class="k-timeline__item-text"> New secyrity alert by Firewall & order to take aktion on User Preferences </a> 
+                                <div class="k-timeline__item-info"> Security, Fieewall </div>
+                            </div>
+                            <!--End::Item -->
+                            <!--Begin::Item -->
+                            <div class="k-timeline__item k-timeline__item--brand">
+                                <div class="k-timeline__item-section">
+                                    <div class="k-timeline__item-section-border">
+                                        <div class="k-timeline__item-section-icon"> <i class="flaticon2-box k-font-brand"></i> </div>
+                                    </div>
+                                    <span class="k-timeline__item-datetime">Yestardey</span> 
+                                </div>
+                                <a href="" class="k-timeline__item-text"> FlyMore design mock-ups been uploadet by designers Bob, Naomi, Richard </a> 
+                                <div class="k-timeline__item-info"> PSD, Sketch, AJ </div>
+                            </div>
+                            <!--End::Item -->
+                            <!--Begin::Item -->
+                            <div class="k-timeline__item k-timeline__item--warning">
+                                <div class="k-timeline__item-section">
+                                    <div class="k-timeline__item-section-border">
+                                        <div class="k-timeline__item-section-icon"> <i class="flaticon-pie-chart-1 k-font-warning"></i> </div>
+                                    </div>
+                                    <span class="k-timeline__item-datetime">Aug 13,2018</span> 
+                                </div>
+                                <a href="" class="k-timeline__item-text">
+                                    Meeting with Ken Digital Corp ot Unit14, 3 Edigor Buildings, George Street, Loondon
+                                    <br>
+                                    England, BA12FJ 
+                                </a>
+                                <div class="k-timeline__item-info"> Meeting, Customer </div>
+                            </div>
+                            <!--End::Item -->
+                            <!--Begin::Item -->
+                            <div class="k-timeline__item k-timeline__item--info">
+                                <div class="k-timeline__item-section">
+                                    <div class="k-timeline__item-section-border">
+                                        <div class="k-timeline__item-section-icon"> <i class="flaticon-notepad k-font-info"></i> </div>
+                                    </div>
+                                    <span class="k-timeline__item-datetime">May 09, 2018</span> 
+                                </div>
+                                <a href="" class="k-timeline__item-text"> KeenThemes created new layout whith tens of new options for Keen Admin panel </a> 
+                                <div class="k-timeline__item-info"> HTML,CSS,VueJS </div>
+                            </div>
+                            <!--End::Item -->
+                            <!--Begin::Item -->
+                            <div class="k-timeline__item k-timeline__item--accent">
+                                <div class="k-timeline__item-section">
+                                    <div class="k-timeline__item-section-border">
+                                        <div class="k-timeline__item-section-icon" > <i class="flaticon-bell k-font-accent"></i> </div>
+                                    </div>
+                                    <span class="k-timeline__item-datetime">01:20 AM</span> 
+                                </div>
+                                <a href="" class="k-timeline__item-text"> New secyrity alert by Firewall & order to take aktion on User Preferences </a> 
+                                <div class="k-timeline__item-info"> Security, Fieewall </div>
+                            </div>
+                            <!--End::Item -->
+                        </div>
+                        <!--End::Timeline -->
+                    </div>
+                    <div class="tab-pane fade k-offcanvas-panel__content k-scroll" id="k_quick_panel_tab_actions" role="tabpanel">
+                        <!--begin::Portlet-->
+                        <div class="k-portlet k-portlet--solid-success">
+                            <div class="k-portlet__head">
+                                <div class="k-portlet__head-label">
+                                    <span class="k-portlet__head-icon k-hide"><i class="flaticon-stopwatch"></i></span>
+                                    <h3 class="k-portlet__head-title">
+                                        Recent Bills
+                                    </h3>
+                                </div>
+                                <div class="k-portlet__head-toolbar">
+                                    <div class="k-portlet__head-group">
+                                        <div class="dropdown dropdown-inline">
+                                            <button type="button" class="btn btn-sm btn-font-light btn-outline-hover-light btn-circle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="flaticon-more"></i> </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> 
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-portlet__body">
+                                <div class="k-portlet__content"> Lorem Ipsum is simply dummy text of the printing and typesetting simply dummy text of the printing industry. </div>
+                            </div>
+                            <div class="k-portlet__foot k-portlet__foot--sm k-align-right"> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">Dismiss</a> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">View</a> </div>
+                        </div>
+                        <!--end::Portlet-->
+                        <!--begin::Portlet-->
+                        <div class="k-portlet k-portlet--solid-focus">
+                            <div class="k-portlet__head">
+                                <div class="k-portlet__head-label">
+                                    <span class="k-portlet__head-icon k-hide"><i class="flaticon-stopwatch"></i></span>
+                                    <h3 class="k-portlet__head-title">
+                                        Latest Orders
+                                    </h3>
+                                </div>
+                                <div class="k-portlet__head-toolbar">
+                                    <div class="k-portlet__head-group">
+                                        <div class="dropdown dropdown-inline">
+                                            <button type="button" class="btn btn-sm btn-font-light btn-outline-hover-light btn-circle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="flaticon-more"></i> </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> 
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-portlet__body">
+                                <div class="k-portlet__content"> Lorem Ipsum is simply dummy text of the printing and typesetting simply dummy text of the printing industry. </div>
+                            </div>
+                            <div class="k-portlet__foot k-portlet__foot--sm k-align-right"> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">Dismiss</a> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">View</a> </div>
+                        </div>
+                        <!--end::Portlet-->
+                        <!--begin::Portlet-->
+                        <div class="k-portlet k-portlet--solid-info">
+                            <div class="k-portlet__head">
+                                <div class="k-portlet__head-label">
+                                    <h3 class="k-portlet__head-title">
+                                        Latest Invoices
+                                    </h3>
+                                </div>
+                                <div class="k-portlet__head-toolbar">
+                                    <div class="k-portlet__head-group">
+                                        <div class="dropdown dropdown-inline">
+                                            <button type="button" class="btn btn-sm btn-font-light btn-outline-hover-light btn-circle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="flaticon-more"></i> </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> 
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-portlet__body">
+                                <div class="k-portlet__content"> Lorem Ipsum is simply dummy text of the printing and typesetting simply dummy text of the printing industry. </div>
+                            </div>
+                            <div class="k-portlet__foot k-portlet__foot--sm k-align-right"> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">Dismiss</a> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">View</a> </div>
+                        </div>
+                        <!--end::Portlet-->
+                        <!--begin::Portlet-->
+                        <div class="k-portlet k-portlet--solid-warning">
+                            <div class="k-portlet__head">
+                                <div class="k-portlet__head-label">
+                                    <h3 class="k-portlet__head-title">
+                                        New Comments
+                                    </h3>
+                                </div>
+                                <div class="k-portlet__head-toolbar">
+                                    <div class="k-portlet__head-group">
+                                        <div class="dropdown dropdown-inline">
+                                            <button type="button" class="btn btn-sm btn-font-light btn-outline-hover-light btn-circle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="flaticon-more"></i> </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> 
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-portlet__body">
+                                <div class="k-portlet__content"> Lorem Ipsum is simply dummy text of the printing and typesetting simply dummy text of the printing industry. </div>
+                            </div>
+                            <div class="k-portlet__foot k-portlet__foot--sm k-align-right"> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">Dismiss</a> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">View</a> </div>
+                        </div>
+                        <!--end::Portlet-->
+                        <!--begin::Portlet-->
+                        <div class="k-portlet k-portlet--solid-brand">
+                            <div class="k-portlet__head">
+                                <div class="k-portlet__head-label">
+                                    <h3 class="k-portlet__head-title">
+                                        Recent Posts
+                                    </h3>
+                                </div>
+                                <div class="k-portlet__head-toolbar">
+                                    <div class="k-portlet__head-group">
+                                        <div class="dropdown dropdown-inline">
+                                            <button type="button" class="btn btn-sm btn-font-light btn-outline-hover-light btn-circle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i class="flaticon-more"></i> </button>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> 
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="k-portlet__body">
+                                <div class="k-portlet__content"> Lorem Ipsum is simply dummy text of the printing and typesetting simply dummy text of the printing industry. </div>
+                            </div>
+                            <div class="k-portlet__foot k-portlet__foot--sm k-align-right"> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">Dismiss</a> <a href="#" class="btn btn-bold btn-upper btn-sm btn-font-light btn-outline-hover-light">View</a> </div>
+                        </div>
+                        <!--end::Portlet-->
+                    </div>
+                    <div class="tab-pane fade k-offcanvas-panel__content k-scroll" id="k_quick_panel_tab_settings" role="tabpanel">
+                        <form class="k-form">
+                            <div class="k-heading k-heading--space-sm">Notifications</div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable notifications:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_notifications_1">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable audit log:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm">
+                                        <label>
+                                            <input type="checkbox" name="quick_panel_notifications_2">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-last form-group-xs row">
+                                <label class="col-8 col-form-label">Notify on new orders:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_notifications_2">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="k-separator k-separator--space-md k-separator--border-dashed"></div>
+                            <div class="k-heading k-heading--space-sm">Orders</div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable order tracking:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm k-switch--danger">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_notifications_3">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable orders reports:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm k-switch--danger">
+                                        <label>
+                                            <input type="checkbox" name="quick_panel_notifications_3">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-last form-group-xs row">
+                                <label class="col-8 col-form-label">Allow order status auto update:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm k-switch--danger">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_notifications_4">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="k-separator k-separator--space-md k-separator--border-dashed"></div>
+                            <div class="k-heading k-heading--space-sm">Customers</div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable customer singup:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm k-switch--success">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_notifications_5">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-xs row">
+                                <label class="col-8 col-form-label">Enable customers reporting:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm k-switch--success">
+                                        <label>
+                                            <input type="checkbox" name="quick_panel_notifications_5">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-last form-group-xs row">
+                                <label class="col-8 col-form-label">Notifiy on new customer registration:</label>
+                                <div class="col-4 k-align-right">
+                                    <span class="k-switch k-switch--sm k-switch--success">
+                                        <label>
+                                            <input type="checkbox" checked="checked" name="quick_panel_notifications_6">
+                                            <span></span> 
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end:: Quick Panel -->
+        <!-- begin:: Scrolltop -->
+        <div id="k_scrolltop" class="k-scrolltop"> <i class="la la-arrow-up"></i> </div>
+        <!-- end:: Scrolltop -->
+       
+        <!-- begin::Global Config(global config for global JS sciprts) -->
+        <script>
+            var KAppOptions = {
+                "colors": {
+
+                    "state": {
+                        "brand": "#5d78ff",
+                        "metal": "#c4c5d6",
+                        "light": "#ffffff",
+                        "accent": "#00c5dc",
+                        "primary": "#5867dd",
+                        "success": "#34bfa3",
+                        "info": "#36a3f7",
+                        "warning": "#ffb822",
+                        "danger": "#fd3995",
+                        "focus": "#9816f4"
+                    },
+
+                    "base": {
+
+                        "label": [
+                            "#c5cbe3",
+                            "#a1a8c3",
+                            "#3d4465",
+                            "#3e4466"
+                    ],
+
+                    "shape": [
+                        "#f0f3ff",
+                        "#d9dffa",
+                        "#afb4d4",
+                        "#646c9a"
+                        ]
+                    }
+                }
+            };
+        </script>
+        <!-- end::Global Config -->
+
+
+
+<!--begin:: Global Mandatory Vendors -->
+<!--<script src="assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>-->
+<script src="assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+<script src="assets/vendors/general/moment/min/moment.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+<script src="assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/wnumb/wNumb.js" type="text/javascript"></script>
+<!--end:: Global Mandatory Vendors -->
+
+<!--begin:: Global Optional Vendors -->
+<script src="assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/block-ui/jquery.blockUI.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/components/vendors/bootstrap-datepicker/init.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-datetime-picker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/components/vendors/bootstrap-timepicker/init.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-maxlength/src/bootstrap-maxlength.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/vendors/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+<script src="assets/vendors/general/typeahead.js/dist/typeahead.bundle.js" type="text/javascript"></script>
+<script src="assets/vendors/general/handlebars/dist/handlebars.js" type="text/javascript"></script>
+<script src="assets/vendors/general/inputmask/dist/jquery.inputmask.bundle.js" type="text/javascript"></script>
+<script src="assets/vendors/general/inputmask/dist/inputmask/inputmask.date.extensions.js" type="text/javascript"></script>
+<script src="assets/vendors/general/inputmask/dist/inputmask/inputmask.numeric.extensions.js" type="text/javascript"></script>
+<!-- <script src="assets/vendors/general/inputmask/dist/inputmask/inputmask.phone.extensions.js" type="text/javascript"></script> -->
+<script src="assets/vendors/general/nouislider/distribute/nouislider.js" type="text/javascript"></script>
+<script src="assets/vendors/general/owl.carousel/dist/owl.carousel.js" type="text/javascript"></script>
+<script src="assets/vendors/general/autosize/dist/autosize.js" type="text/javascript"></script>
+<script src="assets/vendors/general/clipboard/dist/clipboard.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/dropzone/dist/dropzone.js" type="text/javascript"></script>
+<script src="assets/vendors/general/summernote/dist/summernote.js" type="text/javascript"></script>
+<script src="assets/vendors/general/markdown/lib/markdown.js" type="text/javascript"></script>
+<script src="assets/vendors/general/bootstrap-markdown/js/bootstrap-markdown.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/components/vendors/bootstrap-markdown/init.js" type="text/javascript"></script>
+<script src="assets/vendors/general/jquery-validation/dist/jquery.validate.js" type="text/javascript"></script>
+<script src="assets/vendors/general/jquery-validation/dist/additional-methods.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/components/vendors/jquery-validation/init.js" type="text/javascript"></script>
+<script src="assets/vendors/general/toastr/build/toastr.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/raphael/raphael.js" type="text/javascript"></script>
+<script src="assets/vendors/general/morris.js/morris.js" type="text/javascript"></script>
+<script src="assets/vendors/general/chart.js/dist/Chart.bundle.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/vendors/bootstrap-session-timeout/dist/bootstrap-session-timeout.min.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/vendors/jquery-idletimer/idle-timer.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/waypoints/lib/jquery.waypoints.js" type="text/javascript"></script>
+<script src="assets/vendors/general/counterup/jquery.counterup.js" type="text/javascript"></script>
+<script src="assets/vendors/general/es6-promise-polyfill/promise.min.js" type="text/javascript"></script>
+<script src="assets/vendors/general/sweetalert2/dist/sweetalert2.min.js" type="text/javascript"></script>
+<script src="assets/vendors/custom/components/vendors/sweetalert2/init.js" type="text/javascript"></script>
+<script src="assets/vendors/general/jquery.repeater/src/lib.js" type="text/javascript"></script>
+<script src="assets/vendors/general/jquery.repeater/src/jquery.input.js" type="text/javascript"></script>
+<script src="assets/vendors/general/jquery.repeater/src/repeater.js" type="text/javascript"></script>
+<script src="assets/vendors/general/dompurify/dist/purify.js" type="text/javascript"></script>
+<!--end:: Global Optional Vendors -->
+
+<!--begin::Global Theme Bundle(used by all pages) -->
+        
+        <script src="assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+        <!--end::Global Theme Bundle -->
+        <!--begin:: Global jQuery InputMask -->
+        <script src="assets/app/custom/general/components/forms/widgets/input-mask.js" type="text/javascript"></script>
+        <!--end:: Global jQuery InputMask -->
+		<!--begin::Page Vendors(used by this page) -->
+        <script src="assets/vendors/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
+        <!--end::Page Vendors -->
+        <!--begin::Page Scripts(used by this page) -->
+        <script src="assets/app/custom/general/dashboard.js" type="text/javascript"></script>
+        <!--end::Page Scripts -->
+        <!--begin::Global App Bundle(used by all pages) -->
+        <script src="assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+        <!--end::Global App Bundle -->
+        <!--begin::Page Scripts(used by this page) CHECAR -->
+        <script src="assets/app/custom/general/components/base/popovers.js" type="text/javascript"></script>
+        <!--end::Page Scripts -->
+    </body>
+    <!-- end::Body -->
+</html>

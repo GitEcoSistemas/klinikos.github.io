@@ -121,13 +121,17 @@ WebFont.load({
             <div class="k-login-v1__body-wrapper">
                 <div class="k-login-v1__body-container">
                     <h3 class="k-login-v1__body-title">
-                        Acesso as paginas
+                        Acesso ao sistema
                     </h3>
                     <!--begin::Form-->
-                  <p><a href="Login.html" class="k-link">Login</a> </p>
-                  <br/>
-                  <p><a href="#" class="k-link">Cadastro Paciente</a> </p>
-                  <br/>
+                    <form class="k-login-v1__body-form k-form" action="#" autocomplete="off">
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="" name="usuario" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="" name="senha" autocomplete="off">
+                        </div>
+                    </form>
                     <!--end::Form-->
                     <!--begin::Action-->
                     <div class="k-login-v1__body-action">
